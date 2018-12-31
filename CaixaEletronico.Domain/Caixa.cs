@@ -2,7 +2,7 @@
 
 namespace CaixaEletronico.Domain
 {
-    public class Caixa
+    public class Caixa : ICaixa
     {
         public ICollection<int> Saque(int valor)
         {

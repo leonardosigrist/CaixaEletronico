@@ -6,9 +6,9 @@ namespace CaixaEletronico.Api.Controllers
     [Route("api/[controller]")]
     public class CaixaEletronicoController : Controller
     {
-        private readonly Caixa caixa;
+        private readonly ICaixa caixa;
 
-        public CaixaEletronicoController(Caixa caixa)
+        public CaixaEletronicoController(ICaixa caixa)
         {
             this.caixa = caixa;
         }
