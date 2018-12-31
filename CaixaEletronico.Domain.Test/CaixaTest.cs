@@ -9,19 +9,32 @@ namespace CaixaEletronico.Domain.Test
         [Fact]
         public void SaqueContemMenorNumeroDeCedulas()
         {
-            Assert.Equal(3, caixa.Saque(80).Count);
+            int quantidadeDeCedulas = 3;
+            int valorDoSaque = 80;
+
+            var resultadoCedulas = caixa.Saque(valorDoSaque);
+
+            Assert.Equal(quantidadeDeCedulas, resultadoCedulas.Count);
         }
 
         [Fact]
         public void SaqueComCedulasIndisponiveis()
         {
-            Assert.False(caixa.ValidaCedulasDisponiveis(45));
+            int valorDoSaque = 45;
+
+            bool saqueEhValido = caixa.ValidaCedulasDisponiveis(valorDoSaque);
+
+            Assert.False(saqueEhValido);
         }
 
         [Fact]
         public void SaqueValido()
         {
-            Assert.True(caixa.ValidaCedulasDisponiveis(510));
+            int valorDoSaque = 510;
+
+            bool saqueEhValido = caixa.ValidaCedulasDisponiveis(valorDoSaque);
+
+            Assert.True(saqueEhValido);
         }
     }
 }
